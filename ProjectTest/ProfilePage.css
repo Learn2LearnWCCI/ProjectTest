@@ -1,0 +1,61 @@
+﻿body {
+    background-color: #333333;
+}
+
+#profileHeading {
+    margin-top: 30px;
+    background-color: #18b3a6;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.results {
+    margin-right: 0px;
+    margin-left: 0px;
+    background-image: url('images/chalkboard.jpg');
+    color: #FFFFFF;
+}
+
+.portalButton{
+    color: #fff;
+    background-color: #18b3a6;
+    border-color: #2e6da4;
+}
+
+.portalButton:hover{
+    color: #fff;
+    background-color: #18b3a6;
+    border-color: #2e6da4;
+}
+
+.piechart {
+    width: 900px; 
+    height: 489.9px;
+}
+
+a.assessmentLink{
+    color: #FFAA50;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a.assessmentLink:hover{
+    color: #333333;
+}
+
+.portals {
+    margin-top: 20px;
+    background-color: #333333;
+    padding: 25px 50px;
+    font-family: 'News Cycle', sans-serif;
+    color: #000000;
+}
+
+.portals .content {
+    font-size: 20px;
+}
+
+h4.portals {
+    font-weight: bold;
+}body {
+}

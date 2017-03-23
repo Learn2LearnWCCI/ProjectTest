@@ -1,0 +1,73 @@
+﻿@using System
+@using System.Linq
+@using System.Runtime.InteropServices.ComTypes
+@using Microsoft.AspNet.Identity.EntityFramework
+
+@model IEnumerable<Learn2Learn.Models.Results>
+
+
+    @{
+    ViewBag.Title = "Results";
+    }
+
+    <link href="~/Content/ProfilePage.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <div class="container">
+        <div class="well" id="profileHeading">
+            <h2>My Learning Style</h2>
+            @Html.ActionLink("Take Assessment", "Create", null, new { @class= "assessmentLink" })
+        </div>
+
+        @foreach (var item in Model)
+        {
+        <div class="row well results">
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="piechart img-responsive"></div>
+                @Html.HiddenFor(modelItem => item.AuditoryResult, new { id = String.Empty })<br />
+                @Html.HiddenFor(modelItem => item.VisualResult, new { id = String.Empty })<br />
+                @Html.HiddenFor(modelItem => item.KinestheticResult, new { id = String.Empty })<br />
+                @Html.DisplayNameFor(model => model.Date): @Html.DisplayFor(modelItem => item.Date)<br />
+                <p>
+                    Name:
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.LastName)
+                </p>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) | not allowing edit*@
+                @*@Html.ActionLink("Details", "Details", new { id = item.ID })*@
+                @*@Html.ActionLink("Delete Result", "Delete", new { id = item.ID }, new { @class = "btn btn-primary" })*@
+            </div>
+
+            @{
+            int[] values = { item.AuditoryResult, item.VisualResult, item.KinestheticResult };
+            int maxValue = values.Max();
+            int valueIndex = Array.IndexOf(values, maxValue);
+            }
+            @if (valueIndex == 0)
+            {
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 summary vissummary">
+                <img class="img-responsive" src="~/Content/images/auditoryStyle.png" />
+                <br /> @Html.ActionLink("Auditory Portal", "AuditoryPortal", "Home", null, new { @class = "btn btn-primary portalButton" })
+            </div>
+            }
+            @if (valueIndex == 1)
+            {
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 summary vissummary">
+                <img class="img-responsive" src="~/Content/images/visualStyle.png" />
+                <br /> @Html.ActionLink("Visual Portal", "VisualPortal", "Home", null, new { @class = "btn btn-primary portalButton" })
+            </div>
+            }
+            @if (valueIndex == 2)
+            {
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 summary kinsummary">
+                <img class="img-responsive" src="~/Content/images/kinestheticStyle.png" />
+                <br />@Html.ActionLink("Kinesthetic Portal", "KinPortal", "Home", null, new { @class = "btn btn-primary portalButton" })
+            </div>
+            }
+        </div>
+
+        }
+        <div id="piechart"></div>
+
+    </div>
