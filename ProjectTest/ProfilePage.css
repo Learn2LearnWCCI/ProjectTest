@@ -43,6 +43,20 @@ a.assessmentLink:hover{
     color: #333333;
 }
 
+h3 {
+   color: #18b3a6;
+}
+
+.resourcesLink a {
+    color: #FFAA50;
+    font-weight: bold;
+}
+
+a.resourcesLink:hover {
+    color: #FFAA50;
+    font-weight: bold;
+}
+
 .portals {
     margin-top: 20px;
     background-color: #333333;
