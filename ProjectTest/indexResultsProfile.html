@@ -24,7 +24,7 @@
         {
         <div class="row well results">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <div class="piechart img-responsive"></div>
+                <div class="piechart"></div>
                 @Html.HiddenFor(modelItem => item.AuditoryResult, new { id = String.Empty })<br />
                 @Html.HiddenFor(modelItem => item.VisualResult, new { id = String.Empty })<br />
                 @Html.HiddenFor(modelItem => item.KinestheticResult, new { id = String.Empty })<br />
@@ -68,6 +68,5 @@
         </div>
 
         }
-        <div id="piechart"></div>
 
     </div>

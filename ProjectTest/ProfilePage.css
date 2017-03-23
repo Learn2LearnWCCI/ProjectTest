@@ -51,11 +51,18 @@ a.assessmentLink:hover{
     color: #000000;
 }
 
-.portals .content {
+.portals {
     font-size: 20px;
 }
 
 h4.portals {
     font-weight: bold;
-}body {
+}
+
+.content {
+    background-image: url('images/chalkboard.jpg');
+}
+
+.well .results {
+        border: none;
 }
